@@ -6,21 +6,35 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import com.sistema.sistematicket.data.AppDatabase
+import com.sistema.sistematicket.model.Usuario
 import com.sistema.sistematicket.ui.theme.HomeScreen
 import com.sistema.sistematicket.ui.theme.MarcelaPazTicketTheme
 import com.sistema.sistematicket.ui.theme.PantallaBase
 import com.sistema.sistematicket.ui.theme.abrir
+import com.sistema.sistematicket.utils.Sesion
 
 class HomeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        val dao = AppDatabase.obtener(this).usuarioDao()
+
         setContent {
             MarcelaPazTicketTheme {
+                var usuario by remember { mutableStateOf<Usuario?>(null) }
+
+                // busca al usuario que tiene la sesión iniciada
+                LaunchedEffect(Unit) {
+                    usuario = dao.buscarPorId(Sesion.obtener(this@HomeActivity))
+                }
+
                 PantallaBase("Inicio", HomeActivity::class.java) { padding ->
                     Box(Modifier.padding(padding)) {
                         HomeScreen(
+                            nombre = usuario?.nombre ?: "",
                             onDocumentos = {
                                 abrir(this@HomeActivity, DocumentosActivity::class.java, true)
                             },
