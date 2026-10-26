@@ -144,7 +144,7 @@ fun LoginScreen(
     }
 }
 
-// ---------- Registro ----------
+// Registro
 @Composable
 fun RegistroScreen(dao: UsuarioDAO, onVolver: () -> Unit) {
     val scope = rememberCoroutineScope()
@@ -289,14 +289,6 @@ fun TarjetaAcceso(titulo: String, detalle: String, icono: ImageVector, onClick: 
                 Text(detalle)
             }
         }
-    }
-}
-
-// Documentos
-@Composable
-fun DocumentosScreen() {
-    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("Aquí irán los documentos")
     }
 }
 
