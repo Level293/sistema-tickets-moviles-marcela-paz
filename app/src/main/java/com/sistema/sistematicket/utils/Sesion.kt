@@ -2,7 +2,7 @@ package com.sistema.sistematicket.utils
 
 import android.content.Context
 
-// Guarda el id del usuario que inició sesión.
+// Guarda el id del usuario que inició sesión
 object Sesion {
 
     fun guardar(contexto: Context, id: Int) {

@@ -32,7 +32,7 @@ import com.sistema.sistematicket.model.Usuario
 import com.sistema.sistematicket.utils.Validators
 import kotlinx.coroutines.launch
 
-// Muestra ícono, mensaje de error e ícono de error.
+// Muestra ícono, mensaje de error e ícono de error
 @Composable
 fun CampoTexto(
     valor: String,
@@ -66,7 +66,7 @@ fun CampoTexto(
     )
 }
 
-// ---------- Login ----------
+// Login
 @Composable
 fun LoginScreen(
     dao: UsuarioDAO,
@@ -86,7 +86,7 @@ fun LoginScreen(
         verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Logo de la escuela.
+        // Logo del colegio
         Image(
             painter = painterResource(id = R.drawable.img),
             contentDescription = "Logo",

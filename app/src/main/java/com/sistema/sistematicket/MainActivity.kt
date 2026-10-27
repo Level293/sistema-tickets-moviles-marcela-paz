@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
                         LoginScreen(
                             dao = dao,
                             onLoginExitoso = { usuario ->
-                                // Guarda la sesión y abre el inicio.
+                                // Guarda la sesión y abre el inicio
                                 Sesion.guardar(this@MainActivity, usuario.id)
                                 abrir(this@MainActivity, HomeActivity::class.java)
                                 finish()

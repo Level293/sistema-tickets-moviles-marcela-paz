@@ -22,7 +22,6 @@ class RegistroActivity : ComponentActivity() {
             MarcelaPazTicketTheme {
                 Scaffold { padding ->
                     Box(Modifier.padding(padding)) {
-                        // finish() cierra esta pantalla y vuelve al login.
                         RegistroScreen(dao = dao, onVolver = { finish() })
                     }
                 }
