@@ -2,7 +2,7 @@ package com.sistema.sistematicket.utils
 
 import android.util.Patterns
 
-// Cada función devuelve null si el dato es válido, o el mensaje de error.
+// Cada función devuelve null si el dato es válido, o el mensaje de error
 object Validators {
 
     fun requerido(texto: String, campo: String): String? {

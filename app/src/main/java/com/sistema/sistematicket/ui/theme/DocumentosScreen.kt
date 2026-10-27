@@ -62,13 +62,11 @@ fun DocumentosScreen(dao: DocumentoDAO, usuarioId: Int) {
         ActivityResultContracts.OpenDocument()
     ) { uri: Uri? ->
         if (uri != null) {
-            // Guarda el permiso para poder abrir el archivo después
             try {
                 contexto.contentResolver.takePersistableUriPermission(
                     uri, Intent.FLAG_GRANT_READ_URI_PERMISSION
                 )
             } catch (e: SecurityException) {
-                // Si no se puede guardar el permiso, se sigue igual.
             }
 
             val mime = contexto.contentResolver.getType(uri) ?: ""
@@ -91,7 +89,7 @@ fun DocumentosScreen(dao: DocumentoDAO, usuarioId: Int) {
         }
     }
 
-    // cámara del teléfono.
+    // cámara del teléfono
     val camara = rememberLauncherForActivityResult(
         ActivityResultContracts.TakePicture()
     ) { exito ->

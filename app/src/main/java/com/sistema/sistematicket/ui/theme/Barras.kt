@@ -37,7 +37,7 @@ fun PantallaBase(
     var confirmarSalida by remember { mutableStateOf(false) }
 
     Scaffold(
-        // Barra superior (como el ejemplo CenterAlignedTopAppBar del profesor).
+        // Barra superior
         topBar = {
             CenterAlignedTopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -55,7 +55,7 @@ fun PantallaBase(
                                 contentDescription = "Menú"
                             )
                         }
-                        // Menú desplegable con las pantallas y cerrar sesión.
+                        // Menú desplegable con las pantallas y cerrar sesión
                         DropdownMenu(
                             expanded = menuAbierto,
                             onDismissRequest = { menuAbierto = false }
@@ -83,7 +83,7 @@ fun PantallaBase(
                 }
             )
         },
-        // Barra de navegación inferior.
+        // Barra de navegación inferior
         bottomBar = {
             NavigationBar {
                 itemsNav.forEach { item ->
@@ -104,12 +104,12 @@ fun PantallaBase(
         contenido(padding)
     }
 
-    // Mensaje de confirmación antes de cerrar sesión.
+    // Mensaje de confirmación antes de cerrar sesión
     if (confirmarSalida) {
         AlertDialog(
             onDismissRequest = { confirmarSalida = false },
             title = { Text("Cerrar sesión") },
-            text = { Text("¿Seguro que quieres cerrar tu sesión?") },
+            text = { Text("¿Seguro que quieres cerrar sesión?") },
             confirmButton = {
                 TextButton(onClick = {
                     confirmarSalida = false
