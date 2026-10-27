@@ -16,7 +16,7 @@ import com.sistema.sistematicket.DocumentosActivity
 import com.sistema.sistematicket.HomeActivity
 import com.sistema.sistematicket.PerfilActivity
 
-// Cada opción del menú apunta a una Activity.
+// Cada opción del menú apunta a una Activity
 data class ItemNav(val titulo: String, val icono: ImageVector, val destino: Class<*>)
 
 val itemsNav = listOf(
