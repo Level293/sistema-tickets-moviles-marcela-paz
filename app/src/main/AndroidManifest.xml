@@ -29,6 +29,15 @@
         <activity android:name=".HomeActivity" android:exported="false" />
         <activity android:name=".DocumentosActivity" android:exported="false" />
         <activity android:name=".PerfilActivity" android:exported="false" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>
